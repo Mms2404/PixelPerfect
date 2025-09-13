@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pixelperfect/core/constants/app_button_styles.dart';
 import 'package:pixelperfect/core/constants/app_colors.dart';
+import 'package:pixelperfect/features/subscription.dart';
 
 class MixerScreen extends StatefulWidget {
   const MixerScreen({super.key});
@@ -33,7 +34,15 @@ class _MixerScreenState extends State<MixerScreen> {
             ),
             Row(
               children: [
-                Image.asset("assets/icons/appBarIcons/subscription.png" , height:24.h,width: 24.w,),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => SubscriptionScreen())
+                    );
+                  },
+                  child: Image.asset("assets/icons/appBarIcons/subscription.png" , height:24.h,width: 24.w,)
+                ),
                 SizedBox(width: 15,),
                 Image.asset("assets/icons/appBarIcons/bell.png" , height:24.h,width: 24.w,)
               ],
@@ -54,7 +63,7 @@ class _MixerScreenState extends State<MixerScreen> {
                   SizedBox(width: 10.w,),
                   SizedBox(
                     height: 38.h,
-                     width: 130.w,
+                     width: 120.w,
                     child: FilledButton.icon(
                       style: FilledButton.styleFrom(
                         backgroundColor: isFiltered
@@ -72,7 +81,7 @@ class _MixerScreenState extends State<MixerScreen> {
                   SizedBox(width: 5.w,),
                   SizedBox(
                     height: 38.h,
-                    width: 100.w,
+                    width: 90.w,
                     child: DropdownButtonFormField<String>(
                       decoration: AppButtonStyles.drop.copyWith(hintText: "Age"),
                       icon: Image.asset("assets/icons/drop.png", height: 20.h,width: 20.h,),
@@ -83,8 +92,8 @@ class _MixerScreenState extends State<MixerScreen> {
                   ),
                   SizedBox(width: 5.w,),
                   SizedBox(
-                    height: 38,
-                    width: 110,
+                    height: 38.h,
+                    width: 110.w,
                     child: DropdownButtonFormField<String>(
                       decoration: AppButtonStyles.drop.copyWith(hintText: "Height"),
                       icon: Image.asset("assets/icons/drop.png", height: 20.h,width: 20.h,),
