@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pixelperfect/core/bottomNavBar/bottom_navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +18,12 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Internship Task',
           home: child,
         );
       },
-      child: const Placeholder(),
+      child: SafeArea(
+        bottom: false,
+        child: AppNavBar()),
     );
   }
 }

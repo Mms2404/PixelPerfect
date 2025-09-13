@@ -33,9 +33,12 @@ flutter:
   uses-material-design: true
 
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/icons/
+    - assets/icons/navIcons/
+    - assets/icons/appBarIcons/
+    - assets/images/
+    
 
 
   fonts:
